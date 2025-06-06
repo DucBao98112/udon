@@ -5,12 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>うどん心 | Udon Kokoro</title>
   
+  
   <link rel="stylesheet" href="style.css" />
 </head>
+<!-- Hộp đánh giá ở góc -->
+<div id="review-widget">
+  <button id="toggleReview">📝 レビュー</button>
+
+  <div id="reviewBox" style="display: none;">
+    <h4>料理のレビューを投稿</h4>
+    <form id="reviewForm">
+      <input type="text" id="username" placeholder="お名前" required><br>
+      <select id="rating" required>
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="1">★☆☆☆☆</option>
+      </select><br>
+      <textarea id="comment" placeholder="コメントを入力してください" rows="2" required></textarea><br>
+      <button type="submit">送信</button>
+    </form>
+
+    <div id="review-list">
+      <!-- Các đánh giá mới sẽ hiện ở đây -->
+    </div>
+  </div>
+</div>
+
 <body>
   <header>
     <div class="ads ads-left">
-  <a href="https://www.youtube.com/shorts/2evUN3WV9TA" target="_blank">
+    <button class="close-btn" onclick="closeAd('ads-left')">✖</button>  
+      <a href="https://www.youtube.com/shorts/2evUN3WV9TA" target="_blank">
     <img src="sashin/20240618065634-udon-20noodles.jpg.webp" alt="カレどん" />
 <h4>おすすめです</h4>
 
@@ -18,6 +45,7 @@
 </div>
 
 <div class="ads ads-right">
+  <button class="close-btn" onclick="closeAd('ads-right')">✖</button>
   <a href="https://www.youtube.com/shorts/nEZVlMyX95M" target="_blank">
     <img src="sashin/honetsuki-dori-30.jpg" alt="骨付鳥の" />
   <h3>おすすめです</h3>
@@ -41,7 +69,7 @@
 
   <section id="about">
     <h2>私たちについて</h2>
-     <p>「うどん心」は、香川県高松市にあるうどん専門店です。新鮮な素材と手作りの技で、心を込めた一杯を提供しています
+     <p>「うどん心」は、香川県高松市にあるうどん専門店です。新鮮な素材と手作りの技で、心を込めた一杯を提供しています</p>
   </section>
 
   <section id="menu">
@@ -117,9 +145,7 @@
   <p id="confirmation"></p>
 </section>
 
-      </label><br />
-      <button type="submit">注文する</button>
-    </form>
+      
     <p id="confirmation"></p>
   </section>
 <section id="review">
